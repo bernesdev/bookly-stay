@@ -1,0 +1,58 @@
+{
+	"brand": {
+		"appName": "Bookly"
+	},
+	"user": {
+		"guestName": "Guest",
+		"guestInitials": "GU"
+	},
+	"stay": {
+		"roomUnit": "{{count}} Room",
+		"roomUnit_plural": "{{count}} Rooms",
+		"adultUnit": "{{count}} Adult",
+		"adultUnit_plural": "{{count}} Adults",
+		"childUnit": "{{count}} Child",
+		"childUnit_plural": "{{count}} Children",
+		"currentLocation": "Current location"
+	},
+	"searchInputOptions": {
+		"aroundCurrentLocation": "Around current location",
+		"selectLocation": "Select a location",
+		"noChildren": "No children"
+	},
+	"searchButton": {
+		"label": "Search"
+	},
+	"selectSheet": {
+		"defaultTitle": "Select an option"
+	},
+	"errorMessage": {
+		"title": "Something went wrong",
+		"detailsLabel": "Error Details",
+		"retry": "Retry"
+	},
+	"messages": {
+		"defaultError": "We encountered an unexpected error. Please check your internet connection or try again in a few minutes. {{code}}",
+		"bookingConfirmationError": "Your booking was confirmed, but we couldn't get the confirmation details. Proceed to your bookings to view the details. {{code}}",
+		"location": {
+			"denied": "Enable your location to discover accommodations near you.",
+			"alwaysDenied": "Enable location access in your device settings to discover accommodations near you.",
+			"disabled": "Enable location in your device settings to discover accommodations near you.",
+			"unavailable": "Location services are unavailable. Please enable location in your device settings to find accommodations near you.",
+			"default": "Enable your location to discover accommodations near you."
+		}
+	},
+	"accommodationLargeCard": {
+		"breakfastIncluded": "Breakfast included",
+		"inCityCenter": "In the city center",
+		"distanceFromCenter": "Distance from center: {{distance}}m",
+		"bedUnit": "{{count}} bed",
+		"bedUnit_plural": "{{count}} beds",
+		"bathroomUnit": "{{count}} bathroom",
+		"bathroomUnit_plural": "{{count}} bathrooms",
+		"perNight": "Per Night"
+	},
+	"accommodationSmallCard": {
+		"perNight": "/night"
+	}
+}

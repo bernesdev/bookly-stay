@@ -1,0 +1,14 @@
+{
+	"actions": {
+		"apply": "Apply"
+	},
+	"calendarSheet": {
+		"title": "Select dates"
+	},
+	"occupancySheet": {
+		"title": "Select rooms and guests",
+		"rooms": "Rooms",
+		"adults": "Adults",
+		"children": "Children"
+	}
+}

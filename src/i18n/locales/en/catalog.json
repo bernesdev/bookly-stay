@@ -1,0 +1,16 @@
+{
+	"screen": {
+		"title": "Hotels"
+	},
+	"sort": {
+		"price": "Price",
+		"distance": "Close to center"
+	},
+	"errors": {
+		"loadAccommodations": "It was not possible to load accommodations",
+		"missingProvider": "useCatalog must be used within CatalogProvider"
+	},
+	"searchSheet": {
+		"title": "Edit Search"
+	}
+}

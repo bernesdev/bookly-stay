@@ -1,0 +1,56 @@
+{
+	"checkoutScreen": {
+		"appBarTitle": "Checkout",
+		"errorTitle": "It was not possible to complete the booking",
+		"sections": {
+			"dates": "Dates",
+			"guestsAndRooms": "Guests & Rooms",
+			"payment": "Payment",
+			"details": "Details"
+		},
+		"fields": {
+			"checkIn": "Check - In",
+			"checkOut": "Check - Out",
+			"rooms": "Rooms",
+			"guests": "Guests",
+			"creditCard": "Credit Card"
+		},
+		"actions": {
+			"edit": "Edit",
+			"confirmBooking": "Confirm Booking"
+		},
+		"details": {
+			"nightUnit": "{{count}} Night",
+			"nightUnit_plural": "{{count}} Nights",
+			"discount": "Discount",
+			"total": "Total"
+		}
+	},
+	"checkoutLoadingSheet": {
+		"defaultErrorMessage": "We encountered an unexpected error while processing your reservation. Please check your internet connection or try again in a few minutes.",
+		"loading": {
+			"title": "Confirming your stay",
+			"description": "We’re securing your reservation…"
+		},
+		"success": {
+			"title": "You're all set!",
+			"description": "Your stay is confirmed"
+		},
+		"error": {
+			"title": "Booking failed",
+			"description": "We couldn't confirm your stay"
+		},
+		"actions": {
+			"tryAgain": "Try Again",
+			"cancel": "Cancel"
+		}
+	},
+	"confirmationScreen": {
+		"errorTitle": "Booking details could not be loaded",
+		"errorButton": "Check Reservations",
+		"thanks": "Thank you for staying with Bookly.",
+		"actions": {
+			"checkReservation": "Check Reservation"
+		}
+	}
+}

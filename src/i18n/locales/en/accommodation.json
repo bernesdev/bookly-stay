@@ -1,0 +1,28 @@
+{
+	"appBar": {
+		"title": "Details"
+	},
+	"bookingSheet": {
+		"totalPrice": "Total price",
+		"bookNow": "Book Now",
+		"unauthenticatedTitle": "You need to sign in to proceed with the booking."
+	},
+	"content": {
+		"sections": {
+			"highlights": "Property highlights",
+			"searchSummary": "You searched for:",
+			"location": "Location",
+			"description": "Description"
+		},
+		"fields": {
+			"checkIn": "Check - In",
+			"checkOut": "Check - Out"
+		}
+	},
+	"description": {
+		"readMore": "Read more"
+	},
+	"screen": {
+		"loadErrorTitle": "It was not possible to load accommodation"
+	}
+}

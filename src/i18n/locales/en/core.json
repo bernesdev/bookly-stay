@@ -1,0 +1,9 @@
+{
+	"init": {
+		"fontLoadError": "It was not possible to load fonts. Please restart the app.",
+		"sessionExpiredOrInvalid": "Your session expired or is invalid. Please sign in again."
+	},
+	"api": {
+		"failedToGetAuthToken": "Failed to get auth token"
+	}
+}

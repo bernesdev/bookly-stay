@@ -1,0 +1,101 @@
+{
+	"profileScreen": {
+		"appBarTitle": "Profile",
+		"signInToAccount": "Sign in to your account",
+		"sections": {
+			"account": "Account",
+			"support": "Support"
+		},
+		"actions": {
+			"editProfile": "Edit Profile",
+			"deleteAccount": "Delete Account",
+			"reportBug": "Report a Bug",
+			"signOut": "Sign Out",
+			"signIn": "Sign In"
+		},
+		"unauthenticatedSheetTitle": "To report a bug you need to be logged in",
+		"toasts": {
+			"signOutSuccess": "Signed out successfully"
+		}
+	},
+	"editProfileScreen": {
+		"appBarTitle": "Edit Profile",
+		"fields": {
+			"namePlaceholder": "Name",
+			"emailPlaceholder": "Email",
+			"newPasswordPlaceholder": "New Password",
+			"confirmNewPasswordPlaceholder": "Confirm New Password"
+		},
+		"actions": {
+			"save": "Save"
+		},
+		"toasts": {
+			"updateSuccessTitle": "Profile updated successfully",
+			"errorTitle": "Something went wrong"
+		}
+	},
+	"reportBugScreen": {
+		"appBarTitle": "Report a Bug",
+		"fields": {
+			"whatWentWrong": {
+				"label": "What went wrong?",
+				"placeholder": "Describe the issue you encountered."
+			},
+			"expectedToHappen": {
+				"label": "What did you expect to happen? (Optional)",
+				"placeholder": "Tell us what you expected instead."
+			},
+			"issueCategory": {
+				"label": "Issue Category (Optional)",
+				"placeholder": "Select issue category",
+				"sheetTitle": "Issue Category"
+			},
+			"happenedWhere": {
+				"label": "Where did this happen? (Optional)",
+				"placeholder": "E.g.: Reservation, Checkout, Login..."
+			},
+			"issueFrequency": {
+				"label": "How often does this happen? (Optional)",
+				"placeholder": "Select frequency",
+				"sheetTitle": "How often does this happen"
+			}
+		},
+		"issueCategoryOptions": {
+			"visualIssue": "Visual issue",
+			"featureNotWorking": "Feature not Working",
+			"appCrashOrFreeze": "App crash or freeze",
+			"performanceIssue": "Performance issue",
+			"other": "Other"
+		},
+		"issueFrequencyOptions": {
+			"once": "It happened once",
+			"sometimes": "It happens sometimes",
+			"always": "It happens every time"
+		},
+		"privacyNote": {
+			"line1": "The information you provide will be used only to improve the app.",
+			"line2": "Please do not include sensitive or personal information."
+		},
+		"actions": {
+			"sendReport": "Send Report"
+		},
+		"toasts": {
+			"successTitle": "Report sent successfully!",
+			"successDescription": "Thank you for your feedback.",
+			"errorTitle": "Failed to send report",
+			"errorDescription": "An error occurred while sending your report. Please try again later."
+		}
+	},
+	"validation": {
+		"nameMin": "Name must have at least 2 characters.",
+		"nameMax": "Name must have at most 80 characters.",
+		"invalidEmail": "Enter a valid email address.",
+		"passwordsDoNotMatch": "Passwords do not match.",
+		"passwordMin": "Password must have at least 6 characters.",
+		"passwordMax": "Password must have at most 128 characters.",
+		"whatWentWrongRequired": "What went wrong is required.",
+		"whatWentWrongMax": "What went wrong must have at most 1000 characters.",
+		"expectedBehaviorMax": "Expected behavior must have at most 1000 characters.",
+		"locationMax": "Location must have at most 200 characters."
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"destinationsScreen": {
+		"appBarTitle": "Top Destinations"
+	},
+	"locationSheet": {
+		"title": "Location"
+	},
+	"historyList": {
+		"empty": "Search for locations to see your recent searches here.",
+		"sectionTitle": "Recent searches"
+	},
+	"locationList": {
+		"sectionTitle": "Locations",
+		"loadError": "Ops, something went wrong.",
+		"empty": "No locations found, but you can try another search."
+	},
+	"searchField": {
+		"placeholder": "Where are you going?"
+	},
+	"destinationsList": {
+		"loadErrorTitle": "It was not possible to load the top destinations"
+	}
+}

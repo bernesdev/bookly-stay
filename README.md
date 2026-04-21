@@ -1,50 +1,237 @@
-# Welcome to your Expo app 👋
+<img width="99" height="101" alt="Logo" src="https://github.com/user-attachments/assets/89744021-efba-4cfc-bd96-e828fd5e80e9" />
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Bookly Stay
 
-## Get started
+![Tests](https://img.shields.io/badge/Tests-Jest%20%2B%20RTL-brightgreen)
+![React Native](https://img.shields.io/badge/React%20Native-0.83-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Feature--First-green)
 
-1. Install dependencies
+Bookly is a **demo booking mobile application** built with React Native + Expo to showcase feature-first organization, modern mobile architecture, and production-ready patterns.
 
-   ```bash
-   npm install
-   ```
+> ⚠️ This app is for **demonstration purposes only**. No real payments, reservations, or transactions are processed.
 
-2. Start the app
+<img src="https://github.com/user-attachments/assets/65cd2024-98fa-4c15-bd00-dd32fa1ccef7" alt="Bookly Stay" height="400">
 
-   ```bash
-   npx expo start
-   ```
+## 📑 Table of Contents
 
-In the output, you'll find options to open the app in a
+- [Overview](#-overview)
+- [Screenshots](#-screenshots)
+- [Key Features](#-key-features)
+- [Architecture](#-architecture)
+- [Technical Decisions](#-technical-decisions)
+- [Getting Started](#-getting-started)
+- [Testing](#-running-the-tests)
+- [Author](#-author)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Overview
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Bookly simulates a complete accommodation booking experience, including authentication, destination search, hotel discovery, and reservation confirmation.
 
-## Get a fresh project
+The project is structured to reflect real-world mobile applications, prioritizing:
 
-When you're ready, run:
+- Feature-based organization
+- Clear separation of concerns
+- Scalable routing and state management
+- Maintainable and testable architecture
 
-```bash
-npm run reset-project
+## 📸 Screenshots
+
+<table style="border-style: none; border-color: transparent;">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/e807ba05-51d6-402d-ba6e-847a2939c340" alt="Home Screen" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/52d3ed2d-7f68-4d4f-bc86-0dc764148b37" alt="Destination Search" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/5577c8d1-0803-452a-ad49-730922bcea93" alt="Catalog Screen" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/8375d303-8896-4473-a35b-fae3a06731ed" alt="Accommodation Details" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/375760fa-8bc4-475f-91d5-1d3690d4478a" alt="Checkout and Confirmation" width="200" /></td>
+  </tr>
+</table>
+
+## 📱 Key Features
+
+- **Authentication:** Email/password and social sign-in.
+- **Destination Discovery:** Search locations, view top destinations, and use geo-based suggestions.
+- **Accommodation Catalog:** Browse, sort, and open hotel details with rich sections.
+- **Booking & Checkout:** Pick dates/occupancy, review details, and confirm a mocked reservation.
+- **Bookings Management:** Track active and past bookings from the dedicated tab.
+- **Feedback Loop:** Built-in bug reporting flow.
+
+## 🧪 Try the App (Closed Test)
+
+You can install the Bookly app directly on your device via the closed test builds.
+
+👉 [Bookly – Closed Test Page](TODO)
+
+## 🧱 Tech Stack
+
+- **React Native & Expo**
+- **State management:** `zustand` (client state) + `@tanstack/react-query` (server state)
+- **Navigation:** `expo-router`
+- **Networking:** `axios`
+- **Forms & validation:** `react-hook-form` + `zod`
+- **Styling:** `nativewind`
+- **Localization:** `i18next`
+- **Local storage:** `react-native-mmkv`
+- **Backend Services:** Firebase (Auth, Firestore, Crashlytics) + REST API.
+
+## 🏗 Architecture
+
+Bookly follows a **feature-first modular architecture** approach.
+
+```mermaid
+graph TD
+  subgraph Presentation ["<b>Presentation Layer</b>"]
+    UI[Expo Router Screens]
+    Comp[Reusable UI Components]
+    end
+
+  subgraph AppState ["<b>State Layer</b>"]
+    SQ[TanStack Query]
+    CS[Zustand Stores]
+    end
+
+    subgraph Data ["<b>Data Layer</b>"]
+    Client[Axios API Client]
+    FeatureAPI[Feature API Modules]
+    Mapper[DTO / Mappers / Types]
+    end
+
+  subgraph Ext ["Firebase / REST Backend"]
+    end
+
+  subgraph Lo ["MMKV Local Storage"]
+    end
+
+    %% Request
+  UI --> Comp
+  Comp --> SQ
+  Comp --> CS
+  SQ --> FeatureAPI
+  FeatureAPI --> Client
+
+    %% Response
+  Ext --> Client
+  Lo --> CS
+  Client --> Mapper
+  Mapper --> SQ
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🗂️ Folder Structure
 
-## Learn more
+Each feature (e.g., auth, catalog, booking) is self-contained:
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+app/
+├── (tabs)/             # Main tab routes (home, bookings, profile)
+├── auth.tsx
+├── catalog.tsx
+├── accommodation.tsx
+├── checkout.tsx
+└── ...
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+src/
+├── core/               # HTTP, interceptors, bootstrap, services
+├── shared/             # Reusable UI, theme, selectors, hooks, stores
+├── features/
+│   ├── auth/           # Feature: Authentication
+│   ├── location/       # Feature: Destination and location search
+│   ├── catalog/        # Feature: Accommodation listing
+│   ├── booking/        # Feature: Booking flow and history
+│   ├── checkout/       # Feature: Checkout and confirmation
+│   └── ...
+└── i18n/               # Localization setup and translation resources
+```
 
-## Join the community
+## 💡 Technical Decisions
 
-Join our community of developers creating universal apps.
+### Why React Query + Zustand?
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+I split state responsibilities between server and client concerns. TanStack Query handles cache, pagination, and API lifecycle for remote data, while Zustand keeps booking/session state simple and predictable across screens.
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js LTS
+- npm
+- Expo SDK 55+ toolchain
+- Android Studio or Xcode
+- CocoaPods (for iOS)
+
+### Configuration
+
+#### Environment variables
+
+Environment values are provided via `.env`.
+
+#### 🔥 Firebase
+
+1. Configure your environment variables:
+
+```bash
+EXPO_PUBLIC_API_URL=...
+EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...
+GOOGLE_MAPS_API_KEY=...
+```
+
+2. Create a Firebase project (Auth + Firestore + Crashlytics enabled).
+
+3. Add platform configuration files in `credentials/firebase`:
+- `google-services.json`
+- `GoogleService-Info.plist`
+
+4. Build and run on device/simulator:
+
+```bash
+npm run android
+npm run ios
+```
+
+#### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# iOS setup
+npx pod-install
+```
+
+## 🧪 Running the Tests
+
+The project prioritizes coverage for feature screens, components, hooks, and API modules.
+
+### Unit and Widget Tests
+
+```bash
+npm test
+```
+
+### Test Coverage
+
+To generate coverage data and HTML report:
+
+```bash
+npm test:cov
+```
+
+Current line coverage: <b>80%+</b>
+
+<img width="1640" height="300" alt="Test Coverage" src="https://github.com/user-attachments/assets/5a6c03d7-d5db-4141-94b2-744ad534dde5" />
+
+## 🎨 Assets & Localization
+
+- Assets: `assets/icons`, `assets/images`
+- Localization: Handled via `i18next` + `react-i18next` (Current locale: `en`).
+
+## 👨‍💻 Author
+
+Gabriel Peres Bernes 
+
+Full-Stack Software Engineer
+
+LinkedIn: [https://www.linkedin.com/in/bernesdev/](https://www.linkedin.com/in/bernesdev/)
+
+Email: bernes.dev@gmail.com
+
+## 📄 License & Disclaimer
+
+This project is intended for educational and demonstration purposes only and does not represent a real commercial product.

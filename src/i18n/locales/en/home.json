@@ -1,0 +1,18 @@
+{
+	"sections": {
+		"topDestinations": "Top destinations",
+		"closeToYou": "Close to you"
+	},
+	"actions": {
+		"seeAll": "See All",
+		"retry": "Retry"
+	},
+	"errors": {
+		"topDestinationsLoad": "We had a problem loading the top destinations.",
+		"closeToYouLoad": "We had a problem loading accommodations close to you."
+	},
+	"locationError": {
+		"openSettings": "Open Settings",
+		"allowLocation": "Allow Location"
+	}
+}

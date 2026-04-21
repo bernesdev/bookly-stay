@@ -1,0 +1,58 @@
+{
+	"common": {
+		"status": {
+			"active": "active",
+			"past": "past"
+		},
+		"adultUnit": "{{count}} Adult",
+		"adultUnit_plural": "{{count}} Adults",
+		"childUnit": "{{count}} Child",
+		"childUnit_plural": "{{count}} Children"
+	},
+	"bookingScreen": {
+		"appBarTitle": "My Bookings"
+	},
+	"bookingDetailsScreen": {
+		"appBarTitle": "Booking Details",
+		"errorTitle": "It was not possible to load booking details"
+	},
+	"bookingStatusSwitch": {
+		"booked": "Booked",
+		"history": "History"
+	},
+	"bookingList": {
+		"errorTitle": "It was not possible to load {{status}} bookings",
+		"empty": {
+			"loggedIn": "No {{status}} bookings.",
+			"loggedOut": "You must be signed in to see your bookings."
+		},
+		"actions": {
+			"signIn": "Sign In"
+		}
+	},
+	"bookingCard": {
+		"nightUnit": "night",
+		"nightUnit_plural": "nights",
+		"checkIn": "Check - In",
+		"checkOut": "Check - Out"
+	},
+	"bookingDetails": {
+		"title": "Booking #{{orderId}}",
+		"sections": {
+			"reservation": "Reservation",
+			"price": "Price"
+		},
+		"fields": {
+			"checkIn": "Check - In",
+			"checkOut": "Check - Out",
+			"rooms": "Rooms",
+			"guests": "Guests"
+		},
+		"price": {
+			"nightUnit": "{{count}} Night",
+			"nightUnit_plural": "{{count}} Nights",
+			"discount": "Discount",
+			"total": "Total"
+		}
+	}
+}
