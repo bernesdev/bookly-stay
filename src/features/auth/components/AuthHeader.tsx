@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { View, Image } from 'react-native';
+import { View, Image, Platform } from 'react-native';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 
 import LogoIcon from '@/assets/icons/logo.png';
@@ -15,7 +15,11 @@ export function AuthHeader() {
     >
       <View className="flex-row items-center">
         <Image className="w-[70px] h-[70px]" source={LogoIcon} />
-        <AppText size={48} weight="extrabold" className="ml-3">
+        <AppText
+          size={48}
+          weight="extrabold"
+          className={`ml-3 ${Platform.select({ android: '-mt-3' })}`}
+        >
           {t('auth.authHeader.appName')}
         </AppText>
       </View>
