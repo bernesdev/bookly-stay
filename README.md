@@ -1,4 +1,4 @@
-<img width="99" height="101" alt="Logo" src="https://github.com/user-attachments/assets/89744021-efba-4cfc-bd96-e828fd5e80e9" />
+<img width="100" height="100" alt="Logo" src="https://github.com/user-attachments/assets/753c031c-6379-4055-9acc-a71dab6d1290" />
 
 # Bookly Stay
 
@@ -10,7 +10,7 @@ Bookly is a **demo booking mobile application** built with React Native + Expo t
 
 > ⚠️ This app is for **demonstration purposes only**. No real payments, reservations, or transactions are processed.
 
-<img src="https://github.com/user-attachments/assets/65cd2024-98fa-4c15-bd00-dd32fa1ccef7" alt="Bookly Stay" height="400">
+<img alt="Bookly Stay" height="400" src="https://github.com/user-attachments/assets/bca1b939-053d-4598-8463-0ceaaf34ce51" />
 
 ## 📑 Table of Contents
 
@@ -38,11 +38,11 @@ The project is structured to reflect real-world mobile applications, prioritizin
 
 <table style="border-style: none; border-color: transparent;">
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/e807ba05-51d6-402d-ba6e-847a2939c340" alt="Home Screen" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/52d3ed2d-7f68-4d4f-bc86-0dc764148b37" alt="Destination Search" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/5577c8d1-0803-452a-ad49-730922bcea93" alt="Catalog Screen" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/8375d303-8896-4473-a35b-fae3a06731ed" alt="Accommodation Details" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/375760fa-8bc4-475f-91d5-1d3690d4478a" alt="Checkout and Confirmation" width="200" /></td>
+    <td><img alt="Home Screen" width="200" src="https://github.com/user-attachments/assets/4d000fec-0372-47a9-b42c-c813eca018ae" /></td>
+    <td><img alt="Catalog Screen" width="200" src="https://github.com/user-attachments/assets/e8e1c294-60a2-4be1-b9aa-5aeb61284921" /></td>
+    <td><img alt="Accommodation Screen" width="200" src="https://github.com/user-attachments/assets/32742aa8-35f7-4d80-9672-647782650361" /></td>
+    <td><img alt="Bookings Screen" width="200" src="https://github.com/user-attachments/assets/c0ccdedd-ff22-406c-bea0-fce51423d35c" /></td>
+    <td><img alt="Sign-In Screen" width="200" src="https://github.com/user-attachments/assets/05acb5d9-224d-40f8-8ad6-fa43593b66a2" /></td>
   </tr>
 </table>
 
@@ -202,7 +202,7 @@ The project prioritizes coverage for feature screens, components, hooks, and API
 ### Unit and Widget Tests
 
 ```bash
-npm test
+npm run test
 ```
 
 ### Test Coverage
@@ -210,12 +210,13 @@ npm test
 To generate coverage data and HTML report:
 
 ```bash
-npm test:cov
+npm run test:cov
 ```
 
 Current line coverage: <b>80%+</b>
 
-<img width="1640" height="300" alt="Test Coverage" src="https://github.com/user-attachments/assets/5a6c03d7-d5db-4141-94b2-744ad534dde5" />
+<img width="1512" height="292" alt="Test Coverage" src="https://github.com/user-attachments/assets/f00f19f5-5e4c-4ab9-b8fa-61571daae455" />
+
 
 ## 🎨 Assets & Localization
 
