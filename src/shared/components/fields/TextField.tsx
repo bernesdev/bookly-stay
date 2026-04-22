@@ -118,10 +118,9 @@ export function TextField({
             className={`absolute inset-0 ${isMultiline ? 'justify-start' : 'justify-center'}`}
           >
             <AppText
-              className={`pointer-events-none ${hasText ? 'opacity-0' : ''}`}
+              className={`pointer-events-none ${hasText ? 'opacity-0' : ''} ${Platform.select({ android: 'ml-1' })}`}
               color={editable ? Colors.gray[100] : Colors.gray[200]}
               size={14}
-              style={{ ...Platform.select({ android: { marginLeft: 8 } }) }}
             >
               {placeholder}
             </AppText>
