@@ -4,6 +4,8 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Linking, Platform, TouchableOpacity, View } from 'react-native';
 
+import GithubIcon from '@/assets/icons/github.svg';
+import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import LoginIcon from '@/assets/icons/login.svg';
 import LogoutIcon from '@/assets/icons/logout.svg';
 import UserIcon from '@/assets/icons/user.svg';
@@ -11,6 +13,7 @@ import { UnauthenticatedSheet } from '@/src/features/auth/components/Unauthentic
 import { useAuth } from '@/src/features/auth/hooks/useAuth';
 import { AppScreen } from '@/src/shared/components/AppScreen';
 import { AppText } from '@/src/shared/components/AppText';
+import { IconButton } from '@/src/shared/components/buttons/IconButton';
 import { useBottomSheet } from '@/src/shared/hooks/useBottomSheet';
 import { useToast } from '@/src/shared/hooks/useToast';
 import { useUserStore } from '@/src/shared/hooks/useUserStore';
@@ -159,7 +162,24 @@ export function ProfileScreen() {
         </AppText>
       </TouchableOpacity>
 
-      <View className="items-center justify-end mt-20 px-6">
+      <View className="flex-row items-center justify-end mt-20 px-6">
+        <IconButton
+          Icon={LinkedinIcon}
+          outlined
+          iconSize={18}
+          className="mr-4"
+          iconColor={Colors.gray[100]}
+          onPress={() =>
+            Linking.openURL('https://www.linkedin.com/in/bernesdev')
+          }
+        />
+        <IconButton
+          Icon={GithubIcon}
+          outlined
+          iconSize={18}
+          iconColor={Colors.gray[100]}
+          onPress={() => Linking.openURL('https://github.com/bernesdev')}
+        />
         <AppText size={12} color={Colors.gray[100]} className="ml-auto">
           v{version} ({buildNumber ?? 0})
         </AppText>
