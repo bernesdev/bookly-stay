@@ -1,7 +1,7 @@
 module.exports = {
   expo: {
     name: 'Bookly Stay',
-    slug: 'bookly',
+    slug: 'Bookly',
     version: '1.0.0',
     orientation: 'portrait',
     icon: './assets/images/icon.png',
@@ -10,13 +10,19 @@ module.exports = {
     newArchEnabled: true,
     ios: {
       bundleIdentifier: 'dev.bernes.bookly',
-      googleServicesFile: './credentials/firebase/GoogleService-Info.plist',
+      buildNumber: '1',
+      googleServicesFile:
+        process.env.GOOGLE_SERVICES_INFO_PLIST ??
+        './credentials/firebase/GoogleService-Info.plist',
       supportsTablet: true,
       usesAppleSignIn: true,
     },
     android: {
       package: 'dev.bernes.bookly',
-      googleServicesFile: './credentials/firebase/google-services.json',
+      versionCode: 4,
+      googleServicesFile:
+        process.env.GOOGLE_SERVICES_JSON ??
+        './credentials/firebase/google-services.json',
       adaptiveIcon: {
         backgroundColor: '#5569A6',
         foregroundImage: './assets/images/android-icon-foreground.png',
