@@ -46,44 +46,45 @@ export function TopDestinationsList() {
         onButtonPress={onSeeAll}
         className="mt-8 mb-6 px-6"
       />
+      <View className="min-h-[220px]">
+        {isLoading && (
+          <Animated.View
+            exiting={FadeOut.duration(300)}
+            className="flex-row ml-[24px]"
+          >
+            {Array.from({ length: 5 }).map((_, index) => (
+              <AppSkeleton
+                key={index}
+                width={158}
+                height={220}
+                radius={12}
+                className="mr-3"
+              />
+            ))}
+          </Animated.View>
+        )}
 
-      {isLoading && (
-        <Animated.View
-          exiting={FadeOut.duration(300)}
-          className="flex-row ml-[24px]"
-        >
-          {Array.from({ length: 5 }).map((_, index) => (
-            <AppSkeleton
-              key={index}
-              width={158}
-              height={220}
-              radius={12}
-              className="mr-3"
-            />
-          ))}
-        </Animated.View>
-      )}
+        {error && (
+          <SectionError
+            title={t('home.errors.topDestinationsLoad')}
+            onRetry={refetch}
+            className="px-6"
+          />
+        )}
 
-      {error && (
-        <SectionError
-          title={t('home.errors.topDestinationsLoad')}
-          onRetry={refetch}
-          className="px-6"
-        />
-      )}
-
-      {items && (
-        <AnimatedFlashList
-          entering={FadeIn.duration(300)}
-          data={items}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id}
-          ItemSeparatorComponent={() => <View className="w-3" />}
-          renderItem={({ item }) => <DestinationCard {...item} />}
-          contentContainerStyle={{ paddingHorizontal: 24 }}
-        />
-      )}
+        {items && (
+          <AnimatedFlashList
+            entering={FadeIn.duration(300)}
+            data={items}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            ItemSeparatorComponent={() => <View className="w-3" />}
+            renderItem={({ item }) => <DestinationCard {...item} />}
+            contentContainerStyle={{ paddingHorizontal: 24 }}
+          />
+        )}
+      </View>
     </>
   );
 }
