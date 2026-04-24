@@ -16,13 +16,15 @@ export function SectionError({ title, onRetry, className }: SectionErrorProps) {
   return (
     <Animated.View
       entering={FadeIn.duration(300)}
-      className={`flex-1 ${className} items-center`}
+      className={`items-center mx-6 px-6 py-4 border border-border rounded-xl border-dashed ${className}`}
     >
-      <AppText size={14}>{title}</AppText>
+      <AppText size={14} className="text-center">
+        {title}
+      </AppText>
       <OutlinedButton
         title={t('home.actions.retry')}
         onPress={onRetry}
-        className="mx-auto mt-6"
+        className="mt-6 mx-auto"
       />
     </Animated.View>
   );
