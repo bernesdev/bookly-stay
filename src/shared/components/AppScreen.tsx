@@ -69,8 +69,10 @@ export function AppScreen({
   const { topInset, bottomOffset, topBarHeight } = useLayout();
   const scrollY = useSharedValue(0);
 
+  const initialHeaderHeight = appBar.headerHeight ?? topBarHeight;
   const initialTopBarHeight =
-    topBarHeight + (appBar.FooterComponent ? (appBar.footerHeight ?? 0) : 0);
+    initialHeaderHeight +
+    (appBar.FooterComponent ? (appBar.footerHeight ?? 0) : 0);
   const [currentTopBarHeight, setTopBarHeight] = useState(initialTopBarHeight);
 
   const measuredTopBarOnce = useRef(false);

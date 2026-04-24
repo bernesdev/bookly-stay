@@ -34,8 +34,9 @@ export function CatalogScreen() {
         preset="list"
         appBar={{
           title: t('catalog.screen.title'),
+          headerHeight: 65,
           HeaderComponent: (
-            <View className="px-6 mt-3 mb-2">
+            <View className="px-6 mt-3">
               <TextField
                 PrefixIcon={ChevronLeft}
                 value={locationDatesLabel}
