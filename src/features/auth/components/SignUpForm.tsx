@@ -94,6 +94,7 @@ export function SignUpForm({ onSwitchToSignIn }: SignUpFormProps) {
         errors={errors}
         PrefixIcon={EmailIcon}
         readOnly={isLoading}
+        keyboardType="email-address"
       />
       <PasswordControlledTextField
         ref={passwordRef}
@@ -115,6 +116,7 @@ export function SignUpForm({ onSwitchToSignIn }: SignUpFormProps) {
         control={control}
         errors={errors}
         readOnly={isLoading}
+        returnKeyType="done"
       />
       <View className="mt-10">
         <SolidButton
