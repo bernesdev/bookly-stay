@@ -2,7 +2,7 @@
 
 # Bookly Stay
 
-![Tests](https://github.com/GabrielPeresBernes/flutly-store/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/bernesdev/bookly-stay/actions/workflows/tests.yml/badge.svg)
 ![React Native](https://img.shields.io/badge/React%20Native-0.83-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-Feature--First-green)
 
