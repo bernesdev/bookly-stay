@@ -5,10 +5,15 @@ import { bookingKeys } from './booking.keys';
 import { BookingQuery } from './booking.types';
 
 export function useBookingsQuery(
-  query: Omit<BookingQuery, 'cursor'> & { enabled?: boolean },
+  query: Omit<BookingQuery, 'cursor'> & { enabled?: boolean; userId: string },
 ) {
   return useInfiniteQuery({
-    queryKey: bookingKeys.bookingsKey(query.limit, query.status, undefined),
+    queryKey: bookingKeys.bookingsKey(
+      query.userId,
+      query.limit,
+      query.status,
+      undefined,
+    ),
     queryFn: ({ pageParam }) => getBookings({ ...query, cursor: pageParam }),
     getNextPageParam: (lastPage) => {
       return lastPage.meta.nextCursor ?? undefined;

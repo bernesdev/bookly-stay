@@ -48,6 +48,7 @@ export function BookingList({
   const { bottomSpacing } = useLayout();
 
   const isLoggedIn = useUserStore((state) => state.isLoggedIn);
+  const userId = useUserStore((state) => state.id ?? '');
 
   const {
     data,
@@ -58,6 +59,7 @@ export function BookingList({
     error,
     refetch,
   } = useBookingsQuery({
+    userId,
     status,
     limit: 10,
     enabled: isLoggedIn,
