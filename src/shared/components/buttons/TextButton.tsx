@@ -28,6 +28,7 @@ export function TextButton({
       className={className}
       onPress={onPress}
       disabled={disabled}
+      hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
     >
       <AppText size={size} color={color} weight={weight}>
         {children}
