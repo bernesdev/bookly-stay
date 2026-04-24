@@ -32,6 +32,7 @@ describe('booking.queries', () => {
     mockGetBookings.mockResolvedValue(page);
 
     const result = useBookingsQuery({
+      userId: 'user-1',
       limit: 10,
       status: BookingStatus.active,
     });
@@ -44,11 +45,12 @@ describe('booking.queries', () => {
     expect(result).toBe(infiniteResult);
     expect(mockUseInfiniteQuery).toHaveBeenCalledTimes(1);
     expect(config.queryKey).toEqual(
-      bookingKeys.bookingsKey(10, BookingStatus.active, undefined),
+      bookingKeys.bookingsKey('user-1', 10, BookingStatus.active, undefined),
     );
     expect(config.initialPageParam).toBeUndefined();
     expect(config.enabled).toBe(true);
     expect(mockGetBookings).toHaveBeenCalledWith({
+      userId: 'user-1',
       limit: 10,
       status: BookingStatus.active,
       cursor: 'cursor-1',
@@ -61,6 +63,7 @@ describe('booking.queries', () => {
     mockUseInfiniteQuery.mockReturnValue({ data: undefined });
 
     useBookingsQuery({
+      userId: 'user-2',
       limit: 5,
       status: BookingStatus.completed,
       enabled: false,
@@ -70,7 +73,7 @@ describe('booking.queries', () => {
 
     expect(config.enabled).toBe(false);
     expect(config.queryKey).toEqual(
-      bookingKeys.bookingsKey(5, BookingStatus.completed, undefined),
+      bookingKeys.bookingsKey('user-2', 5, BookingStatus.completed, undefined),
     );
   });
 
@@ -78,6 +81,7 @@ describe('booking.queries', () => {
     mockUseInfiniteQuery.mockReturnValue({ data: undefined });
 
     useBookingsQuery({
+      userId: 'user-3',
       limit: 10,
       status: BookingStatus.active,
     });

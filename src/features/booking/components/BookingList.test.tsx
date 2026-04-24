@@ -207,6 +207,7 @@ describe('BookingList', () => {
       screen.getByText('t:booking.bookingList.actions.signIn'),
     ).toBeTruthy();
     expect(mockUseBookingsQuery).toHaveBeenCalledWith({
+      userId: '',
       status: BookingStatus.active,
       limit: 10,
       enabled: false,
