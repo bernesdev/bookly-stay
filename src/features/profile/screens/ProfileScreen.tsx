@@ -163,6 +163,9 @@ export function ProfileScreen() {
       </TouchableOpacity>
 
       <View className="flex-row items-center justify-end mt-20 px-6">
+        <AppText size={12} color={Colors.gray[100]} className="mr-auto">
+          v{version} ({buildNumber ?? 0})
+        </AppText>
         <IconButton
           Icon={LinkedinIcon}
           outlined
@@ -180,9 +183,6 @@ export function ProfileScreen() {
           iconColor={Colors.gray[100]}
           onPress={() => Linking.openURL('https://github.com/bernesdev')}
         />
-        <AppText size={12} color={Colors.gray[100]} className="ml-auto">
-          v{version} ({buildNumber ?? 0})
-        </AppText>
       </View>
     </AppScreen>
   );
