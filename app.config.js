@@ -10,7 +10,7 @@ module.exports = {
     newArchEnabled: true,
     ios: {
       bundleIdentifier: 'dev.bernes.bookly',
-      buildNumber: '1',
+      buildNumber: '3',
       googleServicesFile:
         process.env.GOOGLE_SERVICES_INFO_PLIST ??
         './credentials/firebase/GoogleService-Info.plist',
@@ -19,7 +19,7 @@ module.exports = {
     },
     android: {
       package: 'dev.bernes.bookly',
-      versionCode: 4,
+      versionCode: 7,
       googleServicesFile:
         process.env.GOOGLE_SERVICES_JSON ??
         './credentials/firebase/google-services.json',
@@ -48,6 +48,7 @@ module.exports = {
       'expo-maps',
       'expo-apple-authentication',
       'expo-localization',
+      'expo-image',
       [
         'expo-build-properties',
         {

@@ -8,7 +8,7 @@ export function BookingItemSkeleton({ className }: { className?: string }) {
       className={`w-full border border-gray-300 bg-white rounded-xl p-3 ${className}`}
     >
       <View className="flex-row gap-3">
-        <AppSkeleton width={100} height={78} radius={8} />
+        <AppSkeleton width={100} height={84} radius={8} />
         <View className="flex-1 gap-2 py-1">
           <AppSkeleton className="pt-1" width="80%" height={14} />
           <AppSkeleton className="pt-1" width="60%" height={12} />

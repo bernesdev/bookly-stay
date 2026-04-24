@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 
 import { useTranslation } from 'react-i18next';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Animated, {
   Extrapolation,
   interpolate,
@@ -15,6 +15,7 @@ import ChevronLeft from '@/assets/icons/chevron-left.svg';
 import LogoIcon from '@/assets/icons/logo.png';
 import { Colors } from '@/src/shared/theme/colors';
 
+import { AppImage } from '../AppImage';
 import { AppText } from '../AppText';
 import { IconButton } from '../buttons/IconButton';
 
@@ -23,6 +24,7 @@ export type AppTopBarProps = {
   showLeading?: boolean;
   showLogo?: boolean;
   scrollY: SharedValue<number>;
+  headerHeight?: number;
   footerHeight?: number;
   collapsableFooter?: boolean;
   collapsableActionButton?: boolean;
@@ -47,6 +49,7 @@ export function AppTopBar({
   collapsableFooter = false,
   collapsableActionButton = false,
   footerHeight,
+  headerHeight,
 }: AppTopBarProps) {
   const { t } = useTranslation();
 
@@ -100,7 +103,9 @@ export function AppTopBar({
         style={[styles.appBar, animatedAppTopBar]}
       >
         <View className="z-20">
-          {HeaderComponent ?? (
+          {HeaderComponent ? (
+            <View style={{ height: headerHeight }}>{HeaderComponent}</View>
+          ) : (
             <View className="h-[55px] w-full justify-between items-center flex-row px-6">
               {showLeading && (
                 <IconButton
@@ -111,7 +116,7 @@ export function AppTopBar({
               )}
               {showLogo && (
                 <View className="flex-row mr-auto items-center">
-                  <Image className="w-[40px] h-[40px]" source={LogoIcon} />
+                  <AppImage className="w-[40px] h-[40px]" source={LogoIcon} />
                   <AppText
                     className="ml-2"
                     size={18}

@@ -1,12 +1,13 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { useStayStore } from '@/src/shared/hooks/useStayStore';
 import { Colors } from '@/src/shared/theme/colors';
 
 import { BouncyPressable } from '../animations/BouncyPressable';
+import { AppImage } from '../AppImage';
 import { AppText } from '../AppText';
 
 type DestinationCardProps = {
@@ -25,7 +26,6 @@ export function DestinationCard({
   className,
 }: DestinationCardProps) {
   const router = useRouter();
-
   const setStay = useStayStore((state) => state.setStay);
 
   return (
@@ -37,7 +37,11 @@ export function DestinationCard({
         router.push('/catalog');
       }}
     >
-      <Image source={{ uri: image }} className="w-full h-full" />
+      <AppImage
+        source={{ uri: image }}
+        className="w-full h-full"
+        showSkeleton
+      />
       <LinearGradient
         colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.9)']}
         start={{ x: 0.5, y: 0.5 }}

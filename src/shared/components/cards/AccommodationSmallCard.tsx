@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 
 import { useTranslation } from 'react-i18next';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 
 import LocationIcon from '@/assets/icons/location.svg';
 import StarIcon from '@/assets/icons/star.svg';
@@ -9,6 +9,7 @@ import { Accommodation } from '@/src/features/accommodation/api/accommodation.ty
 import { Colors } from '@/src/shared/theme/colors';
 
 import { BouncyPressable } from '../animations/BouncyPressable';
+import { AppImage } from '../AppImage';
 import { AppText } from '../AppText';
 
 type AccommodationSmallCardProps = Accommodation & {
@@ -41,9 +42,10 @@ export function AccommodationSmallCard({
         });
       }}
     >
-      <Image
+      <AppImage
         source={{ uri: image }}
         className="w-[80px] h-[80px] mr-3 rounded-lg"
+        showSkeleton
       />
       <View className="flex-1 min-w-0 py-1 h-full justify-between">
         <AppText

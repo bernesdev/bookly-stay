@@ -15,6 +15,7 @@ import { Colors } from '@/src/shared/theme/colors';
 import { withOpacity } from '@/src/shared/utils/colors.utils';
 
 import { BouncyPressable } from '../animations/BouncyPressable';
+import { AppImage } from '../AppImage';
 import { AppText } from '../AppText';
 
 type AccommodationLargeCardProps = Accommodation & {
@@ -46,10 +47,10 @@ export function AccommodationLargeCard({
         })
       }
     >
-      <Animated.Image
+      <AppImage
         source={{ uri: image }}
         className="w-full h-[170px] rounded-lg"
-        sharedTransitionTag={`accommodation-image-${id}`}
+        showSkeleton
       />
       <LinearGradient
         colors={['rgba(0,0,0,0.3)', 'rgba(0,0,0,0)']}

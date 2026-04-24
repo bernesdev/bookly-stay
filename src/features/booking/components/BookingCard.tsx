@@ -1,12 +1,13 @@
 import { useRouter } from 'expo-router';
 
 import { useTranslation } from 'react-i18next';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 
 import CalendarIcon from '@/assets/icons/calendar.svg';
 import LocationIcon from '@/assets/icons/location.svg';
 import { Booking } from '@/src/features/booking/api/booking.types';
 import { BouncyPressable } from '@/src/shared/components/animations/BouncyPressable';
+import { AppImage } from '@/src/shared/components/AppImage';
 import { AppText } from '@/src/shared/components/AppText';
 import { Colors } from '@/src/shared/theme/colors';
 
@@ -37,12 +38,13 @@ export function BookingCard({
         })
       }
     >
-      <View className="flex-row gap-3">
-        <Image
+      <View className="flex-row gap-3 h-[84px] items-center">
+        <AppImage
           source={{ uri: accommodation.image }}
-          className="w-[100px] h-full rounded-lg"
+          className="w-[100px] rounded-lg"
+          showSkeleton
         />
-        <View className="flex-1 min-w-0 gap-2 py-1">
+        <View className="flex-1 min-w-0 gap-2">
           <AppText
             className="flex-shrink"
             size={16}
