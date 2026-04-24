@@ -59,7 +59,7 @@ The project is structured to reflect real-world mobile applications, prioritizin
 
 You can install the Bookly app directly on your device via the closed test builds.
 
-👉 [Bookly – Closed Test Page](TODO)
+👉 [Bookly – Closed Test Page](https://broadleaf-sparrow-328.notion.site/Bookly-App-Test-34cebf92fe698055a060f735e2721014)
 
 ## 🧱 Tech Stack
 
