@@ -24,5 +24,8 @@
 	},
 	"screen": {
 		"loadErrorTitle": "It was not possible to load accommodation"
+	},
+	"map": {
+		"loading": "Loading map"
 	}
 }
