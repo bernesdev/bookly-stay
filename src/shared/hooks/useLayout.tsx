@@ -8,13 +8,13 @@ export function useLayout() {
   const topOffset = topInset + 24;
 
   const bottomInset =
-    Platform.OS === 'android' ? Math.max(insets.bottom, 16) : 16;
+    Platform.OS === 'android' ? Math.max(insets.bottom, 20) : 20;
   const bottomSpacing = 24;
   const bottomOffset = bottomInset + bottomSpacing;
 
   const topBarHeight = 55;
 
-  const tabBarHeight = 60;
+  const tabBarHeight = 64;
   const tabBarFullHeight = tabBarHeight + bottomInset;
 
   return {
