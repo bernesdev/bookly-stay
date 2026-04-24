@@ -7,6 +7,7 @@ import { AccommodationSortOption } from '../../accommodation/api/accommodation.t
 type CatalogState = {
   sortOption: AccommodationSortOption | undefined;
   newSearch: StayData | undefined;
+  _isRefetching: boolean;
 };
 
 type CatalogActions = {
@@ -21,8 +22,15 @@ export const createCatalogStore = () =>
     // states
     sortOption: undefined,
     newSearch: undefined,
+    _isRefetching: false,
 
     // actions
-    setSortOption: (sortOption) => set({ sortOption }),
-    setNewSearch: (newSearch) => set({ newSearch }),
+    setSortOption: (sortOption) => {
+      set({ sortOption, _isRefetching: true });
+      setTimeout(() => set({ _isRefetching: false }), 500);
+    },
+    setNewSearch: (newSearch) => {
+      set({ newSearch, _isRefetching: true });
+      setTimeout(() => set({ _isRefetching: false }), 500);
+    },
   }));

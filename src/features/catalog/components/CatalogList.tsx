@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { FlashList, FlashListRef } from '@shopify/flash-list';
 import { useTranslation } from 'react-i18next';
@@ -54,19 +54,12 @@ export function CatalogList({
 
   const newSearch = useCatalogStore((state) => state.newSearch);
   const sortOption = useCatalogStore((state) => state.sortOption);
-
-  const [isSortingDelay, setIsSortingDelay] = useState(false);
+  const showRefetchDelay = useCatalogStore((state) => state._isRefetching);
 
   useEffect(() => {
-    setIsSortingDelay(true);
-
     if (scrollY) {
       scrollY.value = 0;
     }
-
-    const timeout = setTimeout(() => setIsSortingDelay(false), 500);
-
-    return () => clearTimeout(timeout);
   }, [sortOption, newSearch, scrollY]);
 
   const paddingTop = topBarHeight + 24;
@@ -82,7 +75,7 @@ export function CatalogList({
     );
   }
 
-  if (isLoading || isSortingDelay) {
+  if (isLoading || showRefetchDelay) {
     return (
       <Animated.View
         entering={FadeIn.duration(300)}
@@ -113,7 +106,7 @@ export function CatalogList({
       onEndReachedThreshold={0.5}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        paddingHorizontal: 24,
+        paddingHorizontal: 21,
         paddingTop,
         paddingBottom: bottomOffset,
       }}
