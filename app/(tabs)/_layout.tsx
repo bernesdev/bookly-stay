@@ -17,13 +17,16 @@ export default function TabLayout() {
   return (
     <Tabs
       tabBar={(props) => <AppBottomBar {...props} />}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        animation: 'none',
+        lazy: false,
+      }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          animation: 'fade',
           tabBarIcon: ({ focused, color }) => (
             <AppBottomBarButton
               title="Home"
@@ -39,7 +42,6 @@ export default function TabLayout() {
         name="bookings"
         options={{
           title: 'My Bookings',
-          animation: 'fade',
           tabBarIcon: ({ focused, color }) => (
             <AppBottomBarButton
               title="My Bookings"
@@ -55,7 +57,6 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          animation: 'fade',
           tabBarIcon: ({ focused, color }) => (
             <AppBottomBarButton
               title="Profile"
