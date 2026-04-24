@@ -17,6 +17,26 @@ import i18n from '@/src/i18n';
 
 import { UserCredentials } from './auth.types';
 
+let playServicesReadyPromise: Promise<boolean> | null = null;
+
+function ensureGooglePlayServicesReady() {
+  if (!playServicesReadyPromise) {
+    playServicesReadyPromise = GoogleSignin.hasPlayServices({
+      showPlayServicesUpdateDialog: true,
+    }).catch((error) => {
+      playServicesReadyPromise = null;
+      throw error;
+    });
+  }
+
+  return playServicesReadyPromise;
+}
+
+export function prewarmGoogleSignIn() {
+  // Fire-and-forget to reduce first interactive login latency.
+  void ensureGooglePlayServicesReady();
+}
+
 function mapFirebaseAuthError(error: unknown): AppError {
   if (
     typeof error === 'object' &&
@@ -101,9 +121,7 @@ export function signInWithGoogle(): ResultAsync<UserCredentials, AppError> {
   return ResultAsync.fromPromise(
     (async () => {
       try {
-        await GoogleSignin.hasPlayServices({
-          showPlayServicesUpdateDialog: true,
-        });
+        await ensureGooglePlayServicesReady();
 
         const response = await GoogleSignin.signIn();
         const idToken = response.data?.idToken;

@@ -2,6 +2,7 @@ import { getAuth, getIdToken } from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import Reactotron from 'reactotron-react-native';
 
+import { prewarmGoogleSignIn } from '@/src/features/auth/api/auth.methods';
 import { UnauthenticatedSheet } from '@/src/features/auth/components/UnauthenticatedSheet';
 import i18n from '@/src/i18n';
 
@@ -27,6 +28,8 @@ export function initializeApp() {
   GoogleSignin.configure({
     webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
   });
+
+  prewarmGoogleSignIn();
 
   setHttpTokenProvider(async () => {
     const user = getAuth().currentUser;
