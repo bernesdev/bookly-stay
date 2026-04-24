@@ -24,6 +24,10 @@ jest.mock('@/assets/icons/chevron-left.svg', () => ({
   default: () => null,
 }));
 
+jest.mock('../AppImage', () => ({
+  AppImage: () => null,
+}));
+
 jest.mock('react-native-reanimated', () => {
   const { View: MockView } = jest.requireActual('react-native');
 

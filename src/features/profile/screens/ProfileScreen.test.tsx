@@ -5,6 +5,7 @@ import {
   getAppScreenMockProps,
   resetAppScreenMock,
 } from '@/testing/mocks/app-screen.mock';
+import '@/testing/mocks/expo-ui.mock';
 import '@/testing/mocks/icons.mock';
 import '@/testing/mocks/react-i18next.mock';
 

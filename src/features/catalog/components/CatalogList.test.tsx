@@ -137,6 +137,18 @@ describe('CatalogList', () => {
   });
 
   it('should render loading/sorting skeleton state', () => {
+    mockUseCatalog.mockReturnValue({
+      items,
+      fetchNextPage: mockFetchNextPage,
+      isLoading: true,
+      isFetchingNextPage: false,
+      hasNextPage: false,
+      sortOption: 'price_asc',
+      newSearch: false,
+      error: null,
+      refetch: mockRefetch,
+    });
+
     renderWithProviders(
       <CatalogList onScroll={jest.fn() as any} topBarHeight={64} />,
     );
@@ -174,7 +186,7 @@ describe('CatalogList', () => {
     expect(scrollY.value).toBe(0);
 
     act(() => {
-      jest.advanceTimersByTime(500);
+      jest.advanceTimersByTime(300);
     });
 
     expect(screen.getByTestId('catalog-list')).toBeTruthy();

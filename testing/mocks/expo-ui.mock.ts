@@ -6,6 +6,16 @@ jest.mock('expo-linear-gradient', () => ({
   LinearGradient: () => null,
 }));
 
+jest.mock('moti/skeleton', () => {
+  const React = jest.requireActual('react');
+  const { View } = jest.requireActual('react-native');
+
+  return {
+    Skeleton: ({ children, ...props }: { children?: React.ReactNode }) =>
+      React.createElement(View, { ...props }, children),
+  };
+});
+
 jest.mock('react-native-reanimated', () => {
   const { Image, View } = jest.requireActual('react-native');
 

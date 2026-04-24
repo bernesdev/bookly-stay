@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { screen } from '@testing-library/react-native';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 
 import '@/testing/mocks';
+import { AppImage } from '@/src/shared/components/AppImage';
 import { renderWithProviders } from '@/testing/src/renderWithProviders';
 
 import { AuthHeader } from './AuthHeader';
@@ -29,7 +30,7 @@ describe('AuthHeader', () => {
 
     expect(classNames).toContain('flex-row items-center');
 
-    const logo = screen.UNSAFE_getByType(Image);
+    const logo = screen.UNSAFE_getByType(AppImage);
     expect(logo.props.source).toBeTruthy();
     expect(logo.props.className).toBe('w-[70px] h-[70px]');
   });

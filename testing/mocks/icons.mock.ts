@@ -77,3 +77,13 @@ jest.mock('@/assets/icons/logout.svg', () => ({
   __esModule: true,
   default: () => null,
 }));
+
+jest.mock('@/assets/icons/linkedin.svg', () => ({
+  __esModule: true,
+  default: () => null,
+}));
+
+jest.mock('@/assets/icons/github.svg', () => ({
+  __esModule: true,
+  default: () => null,
+}));

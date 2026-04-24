@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Image } from 'expo-image';
+
 import { fireEvent, screen } from '@testing-library/react-native';
-import { Image } from 'react-native';
 
 import { makeAccommodation } from '@/testing/factories/accommodation.factory';
 import '@/testing/mocks';
