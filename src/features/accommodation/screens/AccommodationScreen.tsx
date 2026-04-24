@@ -7,8 +7,8 @@ import { StatusBar } from 'expo-status-bar';
 import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
-import Animated from 'react-native-reanimated';
 
+import { AppImage } from '@/src/shared/components/AppImage';
 import { AppText } from '@/src/shared/components/AppText';
 import { ErrorMessage } from '@/src/shared/components/ErrorMessage';
 import { useLayout } from '@/src/shared/hooks/useLayout';
@@ -53,11 +53,7 @@ export function AccommodationScreen() {
     <View className="flex-1">
       <StatusBar style="light" />
       <View className="absolute top-[-22px] left-0 right-0 z-0">
-        <Animated.Image
-          source={{ uri: image }}
-          className="w-full h-[370px]"
-          sharedTransitionTag={`accommodation-image-${id}`}
-        />
+        <AppImage source={{ uri: image }} className="w-full h-[370px]" />
         <LinearGradient
           colors={['rgba(16,16,16, 1)', 'rgba(0,0,0,0)']}
           start={{ x: 0.5, y: 0 }}
@@ -77,8 +73,9 @@ export function AccommodationScreen() {
           backgroundColor: Colors.background,
         }}
         handleIndicatorStyle={{ height: 0 }}
-        animateOnMount={false}
+        enableDynamicSizing={false}
         enableOverDrag={false}
+        animateOnMount={false}
         enableHandlePanningGesture={!error}
         enableContentPanningGesture={!error}
       >

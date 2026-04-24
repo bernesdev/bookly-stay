@@ -1,10 +1,7 @@
-import { AppleMaps, GoogleMaps } from 'expo-maps';
-
 import { useTranslation } from 'react-i18next';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
 
-import LocationIcon from '@/assets/icons/location.svg';
 import StarIcon from '@/assets/icons/star.svg';
 import { Accommodation } from '@/src/features/accommodation/api/accommodation.types';
 import { CalendarSheet, OccupancySheet } from '@/src/features/stay';
@@ -23,6 +20,7 @@ import { Colors } from '@/src/shared/theme/colors';
 import { AccommodationAmenity } from './AccommodationAmenity';
 import { AccommodationDescription } from './AccommodationDescription';
 import { AccommodationDivider } from './AccommodationDivider';
+import { AccommodationMap } from './AccommodationMap';
 
 export function AccommodationContent(accommodation: Accommodation) {
   const { t } = useTranslation();
@@ -125,58 +123,14 @@ export function AccommodationContent(accommodation: Accommodation) {
       <AppText size={16} weight="semibold">
         {t('accommodation.content.sections.location')}
       </AppText>
-      <View className="bg-white px-1 pt-1 pb-3 rounded-xl mt-6">
-        <View className="h-[160px] w-full rounded-xl overflow-hidden">
-          {Platform.OS === 'android' && (
-            <GoogleMaps.View
-              style={{ width: '100%', height: '100%' }}
-              cameraPosition={{
-                coordinates: {
-                  latitude: accommodation!.location.coordinates.lat,
-                  longitude: accommodation!.location.coordinates.lng,
-                },
-                zoom: 15,
-              }}
-              markers={[
-                {
-                  coordinates: {
-                    latitude: accommodation!.location.coordinates.lat,
-                    longitude: accommodation!.location.coordinates.lng,
-                  },
-                  title: accommodation!.name,
-                },
-              ]}
-            />
-          )}
-          {Platform.OS === 'ios' && (
-            <AppleMaps.View
-              style={{ width: '100%', height: '100%' }}
-              cameraPosition={{
-                coordinates: {
-                  latitude: accommodation!.location.coordinates.lat,
-                  longitude: accommodation!.location.coordinates.lng,
-                },
-                zoom: 15,
-              }}
-              markers={[
-                {
-                  coordinates: {
-                    latitude: accommodation!.location.coordinates.lat,
-                    longitude: accommodation!.location.coordinates.lng,
-                  },
-                  title: accommodation!.name,
-                },
-              ]}
-            />
-          )}
-        </View>
-        <View className="flex-row items-center mt-3">
-          <LocationIcon width={16} height={16} stroke={Colors.gray[100]} />
-          <AppText size={14} color={Colors.gray[100]} className="ml-1">
-            {`${accommodation!.location.address.number} ${accommodation!.location.address.street}`}
-          </AppText>
-        </View>
-      </View>
+      <AccommodationMap
+        id={accommodation.id}
+        name={accommodation.name}
+        latitude={accommodation.location.coordinates.lat}
+        longitude={accommodation.location.coordinates.lng}
+        addressNumber={accommodation.location.address.number}
+        addressStreet={accommodation.location.address.street}
+      />
       <AccommodationDivider />
       <AppText size={16} weight="semibold">
         {t('accommodation.content.sections.description')}

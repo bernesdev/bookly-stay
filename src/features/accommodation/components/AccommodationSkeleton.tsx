@@ -10,12 +10,13 @@ export function AccommodationSkeleton() {
     <Animated.View
       entering={FadeIn.duration(300)}
       exiting={FadeOut.duration(300)}
+      className="mt-2"
     >
       <View className="flex-row mt-3 items-center">
-        <AppSkeleton width={50} height={18} />
+        <AppSkeleton width={50} height={16} />
       </View>
       <AccommodationDivider />
-      <AppSkeleton width={150} height={14} className="mt-1" />
+      <AppSkeleton width={150} height={14} className="mt-3" />
       <View className="flex-row justify-between mt-7">
         {Array.from({ length: 4 }).map((_, index) => {
           return (
@@ -41,6 +42,7 @@ export function AccommodationSkeleton() {
           radius={16}
         />
       </View>
+      <AppSkeleton width={150} height={14} className="mt-10" />
       <AccommodationDivider />
       <AppSkeleton width={150} height={14} />
       <View className="bg-white px-1 pt-1 pb-3 rounded-xl mt-6">
