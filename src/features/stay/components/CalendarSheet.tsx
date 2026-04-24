@@ -54,13 +54,14 @@ export function CalendarSheet({ initialDates, onApply }: CalendarSheetProps) {
           iconSize={20}
         />
       </View>
-      <View className="h-[240px] mb-10">
+      <View className="mb-10">
         <Calendar
           calendarMinDateId={toDateId(new Date())}
           calendarMonthId={month}
           calendarActiveDateRanges={[{ startId: startDate, endId: endDate }]}
           onCalendarDayPress={selectDate}
           calendarMonthHeaderHeight={0}
+          calendarDayHeight={38}
           theme={{
             itemWeekName: {
               content: {
