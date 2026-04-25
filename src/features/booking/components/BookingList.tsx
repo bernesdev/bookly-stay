@@ -157,7 +157,7 @@ export function BookingList({
       onEndReachedThreshold={0.5}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        paddingHorizontal: 24,
+        paddingHorizontal: 21,
         paddingTop,
         paddingBottom: bottomSpacing,
       }}

@@ -81,7 +81,7 @@ export function TopDestinationsList() {
             keyExtractor={(item) => item.id}
             ItemSeparatorComponent={() => <View className="w-3" />}
             renderItem={({ item }) => <DestinationCard {...item} />}
-            contentContainerStyle={{ paddingHorizontal: 24 }}
+            contentContainerStyle={{ paddingHorizontal: 21 }}
           />
         )}
       </View>
